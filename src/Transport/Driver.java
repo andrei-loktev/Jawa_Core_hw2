@@ -11,17 +11,11 @@ public abstract class Driver {
         this.experience = experience;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
-    public boolean isHasDoc() {
-        return hasDoc;
-    }
+    public boolean isHasDoc() {return hasDoc;}
 
-    public int getExperience() {
-        return experience;
-    }
+    public int getExperience() {return experience;}
 
     public abstract void startMove();
 

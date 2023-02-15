@@ -1,7 +1,5 @@
 import Transport.*;
 
-import java.sql.Driver;
-
 public class Main {
     public static void main(String[] args) {
         for (int i = 1; i <= 4; i++) {
@@ -13,6 +11,7 @@ public class Main {
 
             DriverD driverD = new DriverD("водитель кат.Д № " + i, true, 5 + i);
             Bus bus = new Bus("автобус № " + i, "№ " + i, 5.5, driverD);
+
             System.out.println(car);
             System.out.println(cargoCar);
             System.out.println(bus);
@@ -20,11 +19,9 @@ public class Main {
             printInfo(cargoCar);
             printInfo(bus);
         }
-
     }
     public static void printInfo (Transport<?> transport){
         System.out.println("водитель " + transport.getDriver().getName() +
                 " управляет " + transport.getBrand() + " и будет участвовать в заезде");
     }
-
 }

@@ -31,5 +31,4 @@ public class CargoCar extends Transport<DriverC> {
         int maxSpeedOnArrival = (int)(minSpeed + (maxSpeed - minSpeed)*Math.random());
         System.out.println("макс скорость в кмч: " + maxSpeedOnArrival);
     }
-
 }
