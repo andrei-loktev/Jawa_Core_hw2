@@ -51,18 +51,16 @@ public abstract class Transport<T extends Driver> implements Competing {
     public String toString() {
         return "тип транспорта: " + brand +
                 ", модель: " + model +
-                ", двигатель: " + engineVolume;
+                ", двигатель: " + engineVolume ;
     }
 
     public abstract void startMove();
 
     public abstract void stopMove();
 
-    interface Competing {
-        void pitStop();
+    public abstract Type getType();
 
-        void lapTime();
+    public abstract void printType();
 
-        void maxSpeed();
     }
-}
+

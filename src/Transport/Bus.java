@@ -1,8 +1,11 @@
 package Transport;
 
 public class Bus extends Transport<DriverD> {
-    public Bus(String brand, String model, double engineVolume, DriverD driver) {
+
+    private Size size;
+    public Bus(String brand, String model, double engineVolume, DriverD driver, Size size) {
         super(brand, model, engineVolume, driver);
+        this.size = size;
     }
 
     @Override
@@ -16,6 +19,20 @@ public class Bus extends Transport<DriverD> {
     }
     public void pitStop() {
         System.out.println("пит-стоп у автобуса");
+    }
+
+    @Override
+    public void printType() {
+        if(getType() == null) {
+            System.out.println("недостаточно данных");
+        } else {
+            System.out.println(getType());
+        }
+    }
+
+    @Override
+    public Type getType() {
+        return Type.BUS;
     }
 
     public void lapTime() {
