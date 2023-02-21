@@ -31,6 +31,16 @@ public class CargoCar extends Transport<DriverC> {
     }
 
     @Override
+    public boolean passDiagnostics() {
+        return this.isDiagnosticPassed();
+    }
+
+    @Override
+    public void setDiagnosticPassed(boolean diagnosticPassed) {
+        super.setDiagnosticPassed(diagnosticPassed);
+    }
+
+    @Override
     public Type getType() {
         return Type.TRUCK;
     }
