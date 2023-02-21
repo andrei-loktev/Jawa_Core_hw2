@@ -1,9 +1,13 @@
 package Transport;
 
 public class CargoCar extends Transport<DriverC> {
-    public CargoCar(String brand, String model, double engineVolume, DriverC driver) {
+    private LoadCapacity loadCapacity;
+
+    public CargoCar(String brand, String model, double engineVolume, DriverC driver,LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, driver);
+        this.loadCapacity = loadCapacity;
     }
+
 
     @Override
     public void startMove() {
@@ -16,6 +20,19 @@ public class CargoCar extends Transport<DriverC> {
 
     public void pitStop() {
         System.out.println("пит-стоп у грузовика");
+    }
+
+    public void printType() {
+        if(getType() == null) {
+            System.out.println("недостаточно данных");
+        } else {
+            System.out.println(getType());
+        }
+    }
+
+    @Override
+    public Type getType() {
+        return Type.TRUCK;
     }
 
     public void lapTime() {

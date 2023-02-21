@@ -1,8 +1,11 @@
 package Transport;
 
 public class Car extends Transport<DriverB> {
-    public Car(String brand, String model, double engineVolume, DriverB driver) {
+
+    private  BodyType bodyType;
+    public Car(String brand, String model, double engineVolume, DriverB driver, BodyType bodyType) {
         super(brand, model, engineVolume, driver);
+        this.bodyType = bodyType;
     }
 
     @Override
@@ -17,6 +20,19 @@ public class Car extends Transport<DriverB> {
 
     public void pitStop() {
         System.out.println("пит-стоп у машины");
+    }
+
+    public void printType() {
+        if(getType() == null) {
+            System.out.println("недостаточно данных");
+        } else {
+            System.out.println(getType());
+        }
+    }
+
+    @Override
+    public Type getType() {
+        return Type.CAR;
     }
 
     public void lapTime() {
