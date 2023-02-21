@@ -19,10 +19,25 @@ public class Main {
             printInfo(car);
             printInfo(cargoCar);
             printInfo(bus);
+            car.setDiagnosticPassed(false);
+            try {
+                checkTransport();
+            } catch (TransportTypeException e) {
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+            }
+            bus.passDiagnostics();
+            cargoCar.passDiagnostics();
         }
+
     }
-    public static void printInfo (Transport<?> transport){
+
+    public static void printInfo(Transport<?> transport) {
         System.out.println("водитель " + transport.getDriver().getName() +
                 " управляет " + transport.getBrand() + " и будет участвовать в заезде");
+    }
+
+    public static void checkTransport() throws TransportTypeException {
+
     }
 }
